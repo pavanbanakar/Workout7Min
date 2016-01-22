@@ -37,7 +37,7 @@
         var workoutPlan;
 
         var startWorkout = function () {
-            workoutPlan = createWorkout();
+            $scope.workoutPlan = createWorkout();
             restExercise = {
                 details: new Exercise({
                     name: "rest",
@@ -45,15 +45,15 @@
                     description: " Relax a bit!",
                     image: "img/rest.png"
                 }),
-                duration: workoutPlan.restBetweenExercise
+                duration: $scope.workoutPlan.restBetweenExercise
             };
             $scope.workoutTimeRemaining =
-                workoutPlan.totalWorkoutDuration();
+                $scope.workoutPlan.totalWorkoutDuration();
             $interval(function () {
                 $scope.workoutTimeRemaining = $scope.workoutTimeRemaining
                 - 1;
             }, 1000, $scope.workoutTimeRemaining);
-            startExercise(workoutPlan.exercises.shift());
+            startExercise($scope.workoutPlan.exercises.shift());
         };
 
         var createWorkout = function () {
@@ -215,9 +215,9 @@
         var getNextExercise = function (currentExercisePlan) {
                                                 var nextExercise = null;
                                                 if (currentExercisePlan === restExercise) {
-                                                nextExercise = workoutPlan.exercises.shift();
+                                                nextExercise = $scope.workoutPlan.exercises.shift();
                                                 } else {
-                                                if (workoutPlan.exercises.length != 0) {
+                                                if ($scope.workoutPlan.exercises.length != 0) {
                                                 nextExercise = restExercise;
                                                 }
                                                 }
@@ -273,7 +273,7 @@
 
     function WorkoutAudioController($scope,$timeout){
     $scope.exercisesAudio = [];
-        var init =function(){
+
 
             var workoutPlanWatch = $scope.$watch('workoutPlan',function(newValue,oldValue){
 
@@ -313,7 +313,7 @@
                     }
                 }
             });
-
+        var init =function(){
             };
             init();
     }
