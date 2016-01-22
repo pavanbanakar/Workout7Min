@@ -1,0 +1,12 @@
+{
+  "name": "angular-sanitize",
+  "_cacheHeaders": {
+    "Last-Modified": "Sun, 06 Dec 2015 19:30:07 GMT",
+    "Content-Type": "text/javascript; charset=UTF-8"
+  },
+  "main": "index.js",
+  "_source": "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular-sanitize.js",
+  "_target": "*",
+  "_originalSource": "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular-sanitize.js",
+  "_direct": true
+}
